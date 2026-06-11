@@ -1,5 +1,3 @@
-package com.tr;
-
 import adapter.AtacadoBrasilAdapter;
 import adapter.GlobalMarketAdapter;
 import domain.Produto;

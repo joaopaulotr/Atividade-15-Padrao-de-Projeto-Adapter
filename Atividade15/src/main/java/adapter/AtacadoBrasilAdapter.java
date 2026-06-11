@@ -1,6 +1,5 @@
 package adapter;
 
-import domain.ItemAtacado;
 import domain.Produto;
 import externo.AtacadoBrasilApi;
 import repository.CatalogoProdutos;
@@ -18,12 +17,13 @@ public class AtacadoBrasilAdapter implements CatalogoProdutos {
     @Override
     public List<Produto> listarProdutos() {
         List<Produto> produtos = new ArrayList<>();
-        for (ItemAtacado item : api.buscarProdutos()) {
+        for (String[] dados : api.buscarProdutosAtacado()) {
+            int estoque = Integer.parseInt(dados[3]);
             produtos.add(new Produto(
-                    item.getCodigo(),
-                    item.getNome(),
-                    item.getPreco(),
-                    item.getEstoque(),
+                    dados[0],
+                    dados[1],
+                    Double.parseDouble(dados[2]),
+                    estoque,
                     "Atacado Brasil"
             ));
         }

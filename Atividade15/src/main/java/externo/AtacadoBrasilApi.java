@@ -1,18 +1,17 @@
 package externo;
 
-import domain.ItemAtacado;
 import java.util.ArrayList;
 import java.util.List;
 
 public class AtacadoBrasilApi {
 
-    public List<ItemAtacado> buscarProdutos() {
-        List<ItemAtacado> items = new ArrayList<>();
+    public List<String[]> buscarProdutosAtacado() {
+        List<String[]> produtos = new ArrayList<>();
 
-        items.add(new ItemAtacado("A100", "Teclado Mecânico", 250.0, 12));
-        items.add(new ItemAtacado("A200", "Monitor 24 Polegadas", 899.9, 4));
-        items.add(new ItemAtacado("A300", "Cadeira Gamer", 1200.0, 0));
+        produtos.add(new String[]{"A100", "Teclado Mecânico", "250.00", "12"});
+        produtos.add(new String[]{"A200", "Monitor 24 Polegadas", "899.90", "4"});
+        produtos.add(new String[]{"A300", "Cadeira Gamer", "1200.00", "0"});
 
-        return items;
+        return produtos;
     }
 }
